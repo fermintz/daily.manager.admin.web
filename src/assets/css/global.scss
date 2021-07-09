@@ -1,0 +1,218 @@
+
+#app{
+  font-family:'Roboto','Noto Sans KR';
+  font-size:14px;
+  word-break: keep-all;
+  color:#292929;
+  background:#F5F6F9;
+}
+
+
+.v-application ul, .v-application ol{
+  padding:0px;
+  list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family:'SCDream';
+  letter-spacing:-0.4px;
+  font-weight:500;
+}
+
+.v-btn{
+  font-family:'SCDream';
+  letter-spacing:0;
+  padding:0px;
+}
+
+.v-btn--text{
+  border-radius:0px;
+  font-size:12px;
+  font-weight:normal;
+}
+
+.v-main{
+  position: relative;
+}
+
+.v-data-table{
+  border:0px;
+}
+
+.subHeader{
+  position: sticky;
+  top:50px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  height:64px;
+  background:#fff;
+  border-bottom:1px solid #e2e2e2;
+  z-index:10;
+
+  .left{
+    display:flex;
+    align-items: center;
+
+    .v-btn{
+      width:64px;
+      height:64px;
+      border-radius:0px;
+      border-right:1px solid #e2e2e2;
+    }
+
+    h3{
+      margin-left:20px;
+      font-size:18px;
+    }
+  }
+
+  .sub-head-btns{
+    display:flex;
+    align-items: center;
+    margin-right:15px;
+
+    .btns{
+      border:1px solid #c2c2c2;
+      border-radius:5px;
+      overflow:hidden;
+
+      .v-btn{
+        border-right:1px solid #c2c2c2;
+        font-size:12px;
+      }
+
+      .v-btn.finish{
+        background:#292929;
+        color:#fff;
+        border:0;
+      }
+      .v-btn:last-child{border-right:0px;}
+    }
+    
+    .btns-2{
+      margin-left:10px;
+    }
+  }
+}
+
+.contents{
+  padding:20px;
+
+  .box{
+    border:1px solid #e2e2e2;
+    background:#fff;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.05);
+
+    .box-head{
+      height:46px;
+      padding:15px;
+      border-bottom:1px solid #e2e2e2;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h4{
+        font-size:14px;
+      }
+
+      .btns{
+        .v-btn{
+          border:1px solid #c2c2c2;
+          height:28px;
+          padding:0 10px;
+          letter-spacing: 0;
+          font-size:12px;
+          margin-left:10px;
+        }
+      }
+    }
+
+    .box-content{
+      padding:20px;
+    }
+  }
+}
+
+// 모달기본
+.modal{
+  position: relative;
+  background:#fff;
+ 
+  .modal-head{
+    position:sticky;
+    top:0px;
+    height:60px;
+    border-bottom:1px solid #e2e2e2;
+    padding:15px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;;
+    z-index:2;
+    
+    h3{
+      font-size:18px;
+    }
+  }
+
+  .modal-cont{
+    padding:20px;
+  }
+
+  .modal-footer{
+    position:sticky;
+    width:100%;
+    bottom:0px;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-top:1px solid #e2e2e2;
+    height:60px;
+    padding:0 15px;
+    background:#fff;
+    z-index:2;
+    
+    .v-btn{
+      background:#fff;
+      min-height:36px;
+      padding:0px 20px;
+      border-radius:5px;
+      margin-left:10px;
+      border:1px solid #c2c2c2;
+      font-size:12px;
+      font-weight:400;
+    }
+
+    .v-btn:last-child{
+      border:0;
+      background:#292929;
+      color:#fff;
+    }
+  }
+}
+
+// v-테이블 관련
+.v-data-table{
+  border-bottom:1px solid #e2e2e2;
+}
+
+.theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr:last-child > th{
+  border-bottom: thin solid rgba(0, 0, 0, 0.7);
+  padding:10px;
+}
+
+.v-data-table > .v-data-table__wrapper > table > tbody > tr > td, .v-data-table > .v-data-table__wrapper > table > thead > tr > td, .v-data-table > .v-data-table__wrapper > table > tfoot > tr > td{
+  min-height:50px;
+  padding:10px 15px;
+  font-size:13px;
+  border-right:1px solid #e2e2e2;
+}
+
+.v-data-table > .v-data-table__wrapper > table > tbody > tr > td:last-child{
+  border-right:0px;
+}
+
+.v-autocomplete {
+  border-radius:0;
+}
