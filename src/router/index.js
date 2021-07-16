@@ -11,7 +11,10 @@ import RiderRegister from '../views/riderRegister.vue';
 import PartnerList from '../views/partnerList.vue'
 import PartnerRegister from '../views/partnerRegister.vue';
 import PartnerDetail from '../views/partnerDetail.vue';
-import CouponList from '../views/couponList.vue';
+import EventList from '../views/eventList.vue';
+import EventWrite from '../views/eventWrite';
+import BoardWrite from '../views/boardWrite';
+import Calculate from '../views/calculate.vue'
 
 Vue.use(VueRouter);
 
@@ -72,9 +75,24 @@ const routes = [
         component: PartnerDetail,
       },
       {
-        path: "/couponList",
-        name: "couponList",
-        component: CouponList,
+        path: "/eventList",
+        name: "eventList",
+        component: EventList,
+      },
+      {
+        path: "/calculate",
+        name: "calculate",
+        component: Calculate,
+      },
+      {
+        path: "/eventWrite",
+        name: "eventWrite",
+        component: EventWrite,
+      },
+      {
+        path: "/boardWrite",
+        name: "boardWrite",
+        component: BoardWrite,
       },
     ],
   },

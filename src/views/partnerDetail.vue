@@ -68,10 +68,6 @@ export default {
 
 <style lang="scss" scoped>
 .partnerDetail{
-  .box{
-    margin-bottom:20px;
-  }
-
   .tabs{
     display:flex;
     align-items: flex-end;

@@ -12,57 +12,85 @@
       <div class="box dataTable">
         <div class="box-head">
           <h4>목록</h4>
+          <div class="btns">
+            <v-btn text @click="$refs.couponModal.handle(true)">
+              쿠폰발급
+            </v-btn>
+            <v-btn text>
+              회원탈퇴
+            </v-btn>
+          </div>
         </div>
         <div class="box-content">
           <div class="tableArea">
             <v-data-table
+              v-model="selected"
               :headers="headers"
-              :items="addressData"
+              :items="memberData"
               item-key="name"
               hide-default-footer
+              :single-select="singleSelect"
+              show-select
             >
-              <template v-slot:item.area="{item}">
-                <span class="area" v-for="area in item.area" :key="area">
-                  {{area}}
-                </span>
+              <template v-slot:item.userName="{item}">
+                <a @click="$router.push('memberDetail')">
+                  {{item.userName}}
+                </a>
               </template>
             </v-data-table>
-
             <Pager />
           </div>
         </div>
       </div>
     </div>
+    <CouponModal ref="couponModal"/>
   </div>
 </template>
 
 <script>
 import Pager from '@/components/pager.vue';
 import SearchOpt from '@/components/searchOpt.vue'
+import CouponModal from '@/components/modal/coupon.vue';
 
 export default {
   components:{
-    SearchOpt, Pager
+    SearchOpt, Pager, CouponModal
   },
   data(){
     return{
+      singleSelect:false,
+      selected: [],
       headers: [
-        { text: '아이디',sortable: false, value: 'id',width:150 },
-        { text: '비밀번호',sortable: false, value: 'pass',width:150 },
-        { text: '이름',sortable: false, value: 'name',width:120},
-        { text: '전화번호',sortable: true, value: 'phone',width:150, },
-        { text: '상태메세지', sortable: false, value: 'message',width:350 },
-        { text: '담당구역', sortable: false, value: 'area'},
+        { text: '회원번호',sortable: false, value: 'memberNum' },
+        { text: '회원명',sortable: false, value: 'userName' },
+        { text: '카카오아이디',sortable: false, value: 'kakaoID' },
+        { text: '전화번호',sortable: false, value: 'phone' },
+        { text: '대표주소',sortable: false, value: 'address' },
+        { text: '총주문수',sortable: false, value: 'totalNum' },
+        { text: '총주문금액',sortable: false, value: 'totalPrice' },
+        { text: '쿠폰',sortable: false, value: 'coupon' },
       ],
-      addressData: [
+      memberData: [
         {
-          id:'dailyWash01',
-          pass:'12341234',
-          name:'김용희',
-          phone:'010-1234-1243',
-          message:'오늘도 열심히 하겠습니다',
-          area:['부산 > 사상구 > 전체','부산 > 북구 > 전체','부산 > 금정구 > 전체', '부산 > 해운대구 > 전체', '부산 > 수영구 > 전체', '부산 > 동래구 > 전체', '부산 > 동구 > 전체']          
+          memberNum:102830,
+          userName:'박수민',
+          kakaoID:'fermintz@gmail.com',
+          phone:'010-8525-4561',
+          address:'부산시 북구 구남언덕로 15 3층',
+          totalNum:'3 건',
+          totalPrice:'98,500 원',
+          coupon:'3'
         },
+        {
+          memberNum:123310,
+          userName:'김민선',
+          kakaoID:'fermintz@gmail.com',
+          phone:'010-8525-4561',
+          address:'부산시 북구 구남언덕로 15 3층',
+          totalNum:'3 건',
+          totalPrice:'98,500 원',
+          coupon:'3'
+        }
       ],
     }
   },

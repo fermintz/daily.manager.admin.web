@@ -24,6 +24,7 @@
               <template v-slot:item.state="{item}">
                 <span class="state">{{item.state}}</span>
               </template>
+              
               <template v-slot:item.orderInfo="{item}">
                 <span class="orderNum" @click="$router.push('orderDetail')">
                   {{item.orderInfo.number}}
@@ -32,6 +33,12 @@
                   {{item.orderInfo.date}}
                 </span>
               </template>
+              
+              <template v-slot:item.userInfo="{item}">
+                <span class="name">{{item.userInfo.name}}</span>
+                <span class="phone">{{item.userInfo.phone}}</span>
+              </template>
+
               <template v-slot:item.pickupInfo="{item}">
                 <span class="pickupDate">
                   {{item.pickupInfo.date}}
@@ -70,7 +77,8 @@ export default {
     return{
       headers: [
         { text: '주문상태',sortable: false, value: 'state' },
-        { text: '주문정보',sortable: true, value: 'orderInfo' },
+        { text: '주문번호/일시',sortable: true, value: 'orderInfo' },
+        { text: '주문자정보',sortable: true, value: 'userInfo'},
         { text: '수거일시', sortable: false, value: 'pickupInfo' },
         { text: '수거/배달장소', sortable: false, value: 'address'},
         { text: '결제금액', sortable: false, value: 'orderPrice'},
@@ -83,6 +91,10 @@ export default {
           orderInfo:{
             number:89191653123,
             date:'2021-07-18 21:56:18',
+          },
+          userInfo:{
+            name:'박수민',
+            phone:'010-8525-4561'
           },
           pickupInfo:{
             date:'2021-07-15',
@@ -98,6 +110,10 @@ export default {
           orderInfo:{
             number:89191651894,
             date:'2021-07-14 12:34:12',
+          },
+          userInfo:{
+            name:'박수민',
+            phone:'010-8525-4561'
           },
           pickupInfo:{
             date:'2021-07-12',

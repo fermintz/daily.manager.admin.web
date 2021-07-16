@@ -37,15 +37,7 @@ export default {
               
             ]
           },
-          {
-            title:'이벤트관리',
-            active:true,
-            menu2d:[
-              {
-                title:'쿠폰관리',
-              },
-            ]
-          },
+          
           {
             title:'회원관리',
             active:true,
@@ -93,9 +85,28 @@ export default {
               },
               {
                 title:'정산관리',
+                routeName:'calculate'
               },
             ]
-          }
+          },
+          {
+            title:'커뮤니티 관리',
+            active:true,
+            menu2d:[
+              {
+                title:'쿠폰이벤트',
+                routeName:'eventList'
+              },
+              {
+                title:'공지사항',
+                routeName:'eventList'
+              },
+              {
+                title:'이용방법',
+                routeName:'eventList'
+              },
+            ]
+          },
         ],
       }
   }
