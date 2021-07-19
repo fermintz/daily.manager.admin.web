@@ -38,7 +38,7 @@
 
       <div class="tab_contenes" v-show="tabActive === 2">
         <SalesSummary />
-        <DayChart />
+        <SalesChart />
       </div>
       
     </div> <!-- contents -->
@@ -51,11 +51,11 @@ import Account from '@/components/partner/account.vue'
 import PartnerInfo from '@/components/partner/partnerInfo.vue'
 import ProductOpt from '@/components/partner/productOpt.vue'
 import SalesSummary from '@/components/partner/salesSummary.vue'
-import DayChart from '@/components/partner/dayChart.vue'
+import SalesChart from '@/components/partner/salesChart.vue'
 
 export default {
   components:{
-    AreaSearch, Account, PartnerInfo, ProductOpt, SalesSummary, DayChart 
+    AreaSearch, Account, PartnerInfo, ProductOpt, SalesSummary, SalesChart 
   },
   data(){
     return{

@@ -15,6 +15,7 @@ import EventList from '../views/eventList.vue';
 import EventWrite from '../views/eventWrite';
 import BoardWrite from '../views/boardWrite';
 import Calculate from '../views/calculate.vue'
+import SalesHome from '../views/salesHome.vue';
 
 Vue.use(VueRouter);
 
@@ -94,6 +95,11 @@ const routes = [
         name: "boardWrite",
         component: BoardWrite,
       },
+      {
+        path:"/salesHome",
+        name:"salesHome",
+        component:SalesHome,
+      }
     ],
   },
 ];

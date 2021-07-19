@@ -14,7 +14,7 @@
     </div>
     <div class="box-content">
       <div class="chart">
-        <BarChart :chartData="chartData" :options="options"/>
+ 
       </div>
 
       <v-data-table>
@@ -25,11 +25,11 @@
 </template>
 
 <script>
-import BarChart from '@/components/chart/bar.vue'
+
 
 export default {
   components:{
-    BarChart
+ 
   },
   mounted(){
     this.fillChartData()

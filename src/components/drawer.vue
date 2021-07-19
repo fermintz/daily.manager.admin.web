@@ -81,7 +81,8 @@ export default {
             active:true,
             menu2d:[
               {
-                title:'전체매출',
+                title:'일자별 매출통계',
+                routeName:'salesHome'
               },
               {
                 title:'정산관리',
