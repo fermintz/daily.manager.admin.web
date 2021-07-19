@@ -138,12 +138,12 @@
 </template>
 
 <script>
-import LineChart from '@/components/chart/lineChart.vue';
 import Pager from '@/components/pager.vue';
+import LineChart from '@/components/chart/lineChart.vue'
 
 export default {
   components:{
-    LineChart, Pager
+    Pager, LineChart
   },
   data(){
     return{
