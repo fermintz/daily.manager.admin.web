@@ -7,7 +7,11 @@
     </div> <!-- sub-head -->
 
     <div class="contents">
-      <SearchOpt />
+      <SearchOpt>
+        <DateSelect />
+        <KeySelect />
+        <Keyword />
+      </SearchOpt>
 
       <div class="box dataTable">
         <div class="box-head">
@@ -35,7 +39,9 @@
               </template>
               
               <template v-slot:item.userInfo="{item}">
-                <span class="name">{{item.userInfo.name}}</span>
+                <span class="name" @click="$router.push('memberDetail')">
+                  {{item.userInfo.name}}
+                </span>
                 <span class="phone">{{item.userInfo.phone}}</span>
               </template>
 
@@ -67,11 +73,14 @@
 
 <script>
 import Pager from '@/components/pager.vue';
-import SearchOpt from '@/components/searchOpt.vue'
+import SearchOpt from '@/components/searchOpt/searchOpt.vue'
+import DateSelect from '@/components/searchOpt/dateSelect.vue'
+import Keyword from '@/components/searchOpt/keyword.vue'
+import KeySelect from '@/components/searchOpt/keySelect.vue'
 
 export default {
   components:{
-    SearchOpt, Pager
+    SearchOpt, Pager, Keyword, KeySelect, DateSelect
   },
   data(){
     return{

@@ -7,7 +7,9 @@
     </div> <!-- sub-head -->
 
     <div class="contents">
-      <SearchOpt />
+      <SearchOpt>
+        <Keyword />
+      </SearchOpt>
 
       <div class="box dataTable">
         <div class="box-head">
@@ -38,11 +40,12 @@
 
 <script>
 import Pager from '@/components/pager.vue';
-import SearchOpt from '@/components/searchOpt.vue'
+import SearchOpt from '@/components/searchOpt/searchOpt.vue'
+import Keyword from '@/components/searchOpt/keyword.vue'
 
 export default {
   components:{
-    SearchOpt, Pager
+    SearchOpt, Pager, Keyword
   },
   data(){
     return{

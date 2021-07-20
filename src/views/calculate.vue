@@ -103,7 +103,7 @@
 // - 쿠폰 발급기간 (발급받을 수 있는 기간)
 
 import CalculateModal from '@/components/calculate/calculateModal'
-import SearchOpt from '@/components/searchOpt.vue'
+import SearchOpt from '@/components/searchOpt/searchOpt.vue'
 
 export default {
   components:{

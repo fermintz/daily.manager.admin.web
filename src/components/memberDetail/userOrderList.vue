@@ -1,8 +1,5 @@
 <template>
-  <div class="userOrderList">
-
-    <SearchOpt />
-
+  <div class="box userOrderList">
     <div class="table_area">
       <v-data-table
         :headers="headers"
@@ -36,11 +33,11 @@
 
 <script>
 import Pager from '@/components/pager.vue';
-import SearchOpt from '@/components/searchOpt.vue';
+
 
 export default {
   components:{
-    Pager, SearchOpt
+    Pager
   },
   data(){
     return{
@@ -80,12 +77,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.box.searchOpt{
-  box-shadow: none;
+.box{
+  padding:20px;
 }
-
 .table_area{
-  margin-top:40px;
   span{
     display:block;
   }

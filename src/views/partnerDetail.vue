@@ -37,8 +37,18 @@
       </div>
 
       <div class="tab_contenes" v-show="tabActive === 2">
-        <SalesSummary />
+        <SearchOpt>
+          <DateSelect />
+        </SearchOpt>
         <SalesChart />
+      </div>
+
+      <div class="tab_contenes" v-show="tabActive === 3">
+        <SearchOpt>
+          <DateSelect />
+          <Keyword />
+        </SearchOpt>
+        <CalcList />
       </div>
       
     </div> <!-- contents -->
@@ -50,12 +60,15 @@ import AreaSearch from '@/components/areaSearch.vue'
 import Account from '@/components/partner/account.vue'
 import PartnerInfo from '@/components/partner/partnerInfo.vue'
 import ProductOpt from '@/components/partner/productOpt.vue'
-import SalesSummary from '@/components/partner/salesSummary.vue'
 import SalesChart from '@/components/partner/salesChart.vue'
+import SearchOpt from '@/components/searchOpt/searchOpt.vue'
+import DateSelect from '@/components/searchOpt/dateSelect.vue'
+import Keyword from '@/components/searchOpt/keyword.vue'
+import CalcList from '@/components/partner/calcList.vue'
 
 export default {
   components:{
-    AreaSearch, Account, PartnerInfo, ProductOpt, SalesSummary, SalesChart 
+    AreaSearch, Account, PartnerInfo, ProductOpt, SalesChart, SearchOpt, CalcList, DateSelect, Keyword
   },
   data(){
     return{

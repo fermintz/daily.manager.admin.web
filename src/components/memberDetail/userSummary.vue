@@ -42,6 +42,8 @@
 
 <style lang="scss" scoped>
 .user_summary{
+  padding:20px;
+   
   dl{
     display:flex;
     flex-direction: column;

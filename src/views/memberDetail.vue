@@ -17,18 +17,25 @@
           >
             {{item}}
           </v-btn>
-        </div>
-        <div class="tabCont" v-show="tabActive === 0">
-          <UserInfo />
-        </div>
+        </div>      
+      </div>
 
-        <div class="tabCont" v-show="tabActive === 1">
-          <UserOrderList />
-        </div>
+      <div class="tabCont" v-show="tabActive === 0">
+        <UserInfo />
+      </div>
 
-        <div class="tabCont" v-show="tabActive === 2">
-          쿠폰관리입니다.
-        </div>
+      <div class="tabCont" v-show="tabActive === 1">
+        <SearchOpt>
+          <DateSelect/>
+        </SearchOpt>
+        <UserOrderList />
+      </div>
+
+      <div class="tabCont" v-show="tabActive === 2">
+        <SearchOpt>
+          <DateSelect/>
+        </SearchOpt>
+        <UserOrderList />
       </div>
     </div>
   </div>
@@ -39,10 +46,12 @@ import MemberHead from '@/components/memberDetail/memberHead.vue'
 import UserInfo from '@/components/memberDetail/userInfo.vue'
 import UserSummary from '@/components/memberDetail/userSummary.vue'
 import UserOrderList from '@/components/memberDetail/userOrderList'
+import SearchOpt from '@/components/searchOpt/searchOpt.vue'
+import DateSelect from '@/components/searchOpt/dateSelect.vue'
 
 export default {
   components:{
-    MemberHead, UserInfo, UserSummary, UserOrderList
+    MemberHead, UserInfo, UserSummary, UserOrderList, SearchOpt, DateSelect
   },
 
   data(){
@@ -58,47 +67,45 @@ export default {
 
 <style lang="scss" scoped>
 .memberDetail{
-  .box{
-    margin-bottom:20px;
-    padding:20px;
-  }
 
   .tabs{
-    margin-top:30px;
+    display:flex;
+    align-items: flex-end;
+    border-bottom:1px solid #292929;
+    margin-bottom:20px;
 
-    .tab{
-      display:flex;
-      border-left:1px solid #e2e2e2;
-
-      .v-btn{
-        position: relative;
-        background:#fff;
-        height:50px;
-        width:150px;
-        border:1px solid #e2e2e2;
-        border-bottom:0px;
-        border-left:0px;
-      }
-
-      .v-btn.active{
-        color:#d22828;
-      }
-      .v-btn.active:after{
-        content:'';
-        display:block;
-        width:100%;
-        height:2px;
-        background:#fff;
-        position: absolute;
-        bottom:-1px;
-      }
+    .v-btn{
+      position: relative;
+      border:1px solid #e2e2e2;
+      border-left:0px;
+      border-bottom:0;
+      height:45px;
+      min-width:150px;
+      background:#f2f2f2;
+      color:#888;
     }
 
-    .tabCont{
-      border:1px solid #e2e2e2;
-      padding:20px;
-      background: #fff;
+    .v-btn:first-child{
+      border-left:1px solid #e2e2e2;
+    }
+
+    .v-btn.active{
+      border-left:1px solid #292929;
+      border-color:#292929;
+      background:#F5F6F9;
+      color:#292929;
+      font-weight:500;
+      height:50px;
+    }
+    .v-btn.active:after{
+      content:'';
+      position: absolute;
+      bottom:-1px;
+      width:100%;
+      height:1px;
+      background: #F5F6F9;
     }
   }
+
 }
 </style>

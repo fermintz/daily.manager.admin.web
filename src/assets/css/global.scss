@@ -157,6 +157,20 @@ h1,h2,h3,h4,h5,h6{
     dl:last-child{
       border-bottom:0px;
     }
+
+    dl.btns{
+      dd{
+        display:flex;
+        justify-content: center;
+        .v-btn{
+          width:100px;
+          height:32px;
+          background:#292929;
+          color:#fff;
+          font-size:12px;
+        }
+      }
+    }
   }
 }
 

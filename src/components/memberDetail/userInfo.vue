@@ -1,5 +1,5 @@
 <template>
-  <div class="user_info">
+  <div class="box user_info">
     <dl class="membership">
       <dt>회원등급</dt>
       <dd>
@@ -128,6 +128,8 @@ export default {
 }
 
 .user_info{
+  padding:20px;
+  
   dl{
     display:flex;
     align-items: center;

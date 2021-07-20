@@ -18,7 +18,9 @@
     </div> <!-- sub-head -->
 
     <div class="contents">
-      <SearchOpt />
+      <SearchOpt>
+        <DateSelect />
+      </SearchOpt>
 
       <div class="box dataTable">
         <div class="box-head">
@@ -64,12 +66,13 @@
 
 <script>
 import Pager from '@/components/pager.vue';
-import SearchOpt from '@/components/searchOpt.vue'
+import SearchOpt from '@/components/searchOpt/searchOpt.vue'
+import DateSelect from '@/components/searchOpt/dateSelect.vue'
 import CouponModal from '@/components/modal/coupon.vue'
 
 export default {
   components:{
-    SearchOpt, Pager, CouponModal
+    SearchOpt, Pager, CouponModal, DateSelect
   },
   data(){
     return{
