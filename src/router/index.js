@@ -17,6 +17,7 @@ import BoardWrite from '../views/boardWrite';
 import Calculate from '../views/calculate.vue'
 import SalesHome from '../views/salesHome.vue';
 import Login from '../views/login.vue';
+import Error from '../views/error.vue';
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,11 @@ const routes = [
     path:"/login",
     name:'login',
     component: Login,
+  },
+  {
+    path:"/error",
+    name:'error',
+    component: Error,
   },
   {
     path:"/",
