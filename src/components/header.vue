@@ -16,7 +16,6 @@
   position: sticky;
   top:0px;
   z-index:2;
-  border-bottom:1px solid #c2c2c2;
   height:50px;
   display:flex;
   align-items: center;
@@ -45,6 +44,16 @@
   .gnb{
     margin-right:15px;
   }
+}
+
+.header::after{
+  content:'';
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  height:1px;
+  background: rgb(0,160,241);
+  background: linear-gradient(100deg, rgba(0,160,241,1) 0%, rgba(0,43,91,1) 100%);
 }
 
 </style>

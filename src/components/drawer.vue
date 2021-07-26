@@ -4,11 +4,6 @@
       <dl v-for="(items, index) in menuItem" :key="index">
         <dt @click="[menuToggle(index), items.active = true]">
           <label>{{items.title}}</label>
-          <span>
-            <v-icon>
-              {{items.active ? 'mdi-minus' : 'mdi-plus'}}
-            </v-icon>
-          </span>
         </dt>
         <dd :class="{active:items.active, menu2d:true}">
           <span v-for="(item, index) in items.menu2d" :key="index" @click="$router.push(item.routeName)">
@@ -139,19 +134,6 @@ export default {
         label:hover{
           color:#292929;
           cursor: pointer;
-        }
-
-        span{
-          display:flex;
-          width:20px;
-          height:20px;
-          border:1px solid #e2e2e2;
-          justify-content: center;
-          align-items: center;
-
-          .v-icon{
-            font-size:14px;
-          }
         }
       }
 
