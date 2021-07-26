@@ -16,10 +16,16 @@ import EventWrite from '../views/eventWrite';
 import BoardWrite from '../views/boardWrite';
 import Calculate from '../views/calculate.vue'
 import SalesHome from '../views/salesHome.vue';
+import Login from '../views/login.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path:"/login",
+    name:'login',
+    component: Login,
+  },
   {
     path:"/",
     name:'baseLayout',
