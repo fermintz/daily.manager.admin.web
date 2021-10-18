@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Base from "../components/layout/base.vue";
 import OrderList from "../views/orderList.vue";
 import OrderDetail from "../views/orderDetail.vue";
+import Checking from "../views/checking.vue"
 import MemberList from "../views/memberList.vue";
 import MemberDetail from "../views/memberDetail.vue";
 import RiderList from "../views/riderList.vue";
@@ -16,6 +17,8 @@ import EventWrite from '../views/eventWrite';
 import BoardWrite from '../views/boardWrite';
 import Calculate from '../views/calculate.vue'
 import SalesHome from '../views/salesHome.vue';
+import RequestList from '../views/request_list.vue';
+import RequestDetail from '../views/request_detail.vue';
 import Login from '../views/login.vue';
 import Error from '../views/error.vue';
 
@@ -111,7 +114,22 @@ const routes = [
         path:"/salesHome",
         name:"salesHome",
         component:SalesHome,
-      }
+      },
+      {
+        path:"/checking",
+        name:"checking",
+        component:Checking,
+      },
+      {
+        path:"/requestList",
+        name:"requestList",
+        component:RequestList,
+      },
+      {
+        path:"/requestDetail",
+        name:"requestDetail",
+        component:RequestDetail,
+      },
     ],
   },
 ];

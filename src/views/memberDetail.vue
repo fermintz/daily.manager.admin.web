@@ -32,10 +32,7 @@
       </div>
 
       <div class="tabCont" v-show="tabActive === 2">
-        <SearchOpt>
-          <DateSelect/>
-        </SearchOpt>
-        <UserOrderList />
+        <UserCouponList />
       </div>
     </div>
   </div>
@@ -48,16 +45,17 @@ import UserSummary from '@/components/memberDetail/userSummary.vue'
 import UserOrderList from '@/components/memberDetail/userOrderList'
 import SearchOpt from '@/components/searchOpt/searchOpt.vue'
 import DateSelect from '@/components/searchOpt/dateSelect.vue'
+import UserCouponList from '@/components/memberDetail/userCouponList'
 
 export default {
   components:{
-    MemberHead, UserInfo, UserSummary, UserOrderList, SearchOpt, DateSelect
+    MemberHead, UserInfo, UserSummary, UserOrderList, SearchOpt, DateSelect, UserCouponList
   },
 
   data(){
     return{
       tab:[
-        '회원정보', '주문내역', '회원쿠폰관리'
+        '회원정보', '주문내역', '회원쿠폰'
       ],
       tabActive:0,
     }

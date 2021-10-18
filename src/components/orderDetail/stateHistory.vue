@@ -1,41 +1,8 @@
 <template>
   <div class="stateHistory">
     <div class="left">
-      <dl>
-        <dt>주문상태</dt>
-        <dd>
-          <v-menu
-            v-model="menu"
-            :close-on-content-click="false"
-            transition="scale-transition"
-            offset-y
-          >
-            <template v-slot:activator="{on,attrs}">
-              <div
-                class="state_btn"
-                v-bind="attrs"
-                v-on="on"
-              >
-                <label> {{nowState}} </label>
-                <v-icon>{{menu ? 'mdi-arrow-up-drop-circle' : 'mdi-arrow-down-drop-circle'}}</v-icon>
-              </div>
-            </template>
-            <div class="select-list">
-              <ul>
-                <li 
-                  v-for="item in stateText" 
-                  :key="item"
-                  v-ripple
-                  @click="stateHandle(item)"
-                >
-                  {{item}}
-                </li>
-              </ul>
-            </div>
-          </v-menu>          
-        </dd>
-      </dl>
-      
+      <label>주문상태</label>
+      <span>배송중</span>
     </div>
     <div class="right">
       <dl>
@@ -91,52 +58,37 @@ export default {
 <style lang="scss" scoped>
 .stateHistory {
   display:flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   margin-bottom:15px;
+  border:1px solid #e2e2e2;
+  padding:15px;
+  background:#fff;
 
   .left{
+    display:flex;
+    align-items: center;
     position: relative;
 
-    dl{
-      display:flex;
+    label{
+      display:Flex;
       align-items: center;
-      dt{
-        display:flex;
-        align-items: center;
-        font-size:12px;
-        border:2px solid #2C9CD4;
-        color:#2C9CD4;
-        margin-right:20px;
-        padding:0 5px;
-        height:24px;
-        font-family:'SCDream';
-        border-radius:4px;
-      }
-      dd{
-        position: relative;
-
-        .state_btn{
-          display:flex;
-          width:160px;
-          height:40px;
-          align-items: center;
-          justify-content: space-between;
-          border-bottom:1px solid #292929;
-          padding:0px;
-          
-          label{
-            font-size:16px;
-            font-family:'SCDream';
-          }
-          .v-icon{
-            font-size:18px;
-            color:#a2a2a2;
-          }
-        }
-      }
+      font-size:11px;
+      line-height:11px;
+      margin-right:10px;
+      background:#e2e2e2;
+      padding:3px 5px;
+      border-radius:5px;
+      color:#595959;
     }
-   
+    
+    span{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      font-size:18px;
+      color:#292929;
+    }
   }
   .right{
     display:flex;

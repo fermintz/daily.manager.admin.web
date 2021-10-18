@@ -5,7 +5,7 @@
         <dl>
           <dt>회원등급</dt>
           <dd>
-            <strong>극소노</strong>
+            <strong>VIP</strong>
           </dd>
         </dl>
       </v-col>

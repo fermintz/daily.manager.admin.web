@@ -72,27 +72,17 @@ h1,h2,h3,h4,h5,h6{
     align-items: center;
     margin-right:15px;
 
-    .btns{
+    .v-btn{
       border:1px solid #c2c2c2;
+      font-size:12px;
+      margin-right:10px;
       border-radius:5px;
-      overflow:hidden;
-
-      .v-btn{
-        border-right:1px solid #c2c2c2;
-        font-size:12px;
-      }
-
-      .v-btn.finish{
-        background:#292929;
-        color:#fff;
-        border:0;
-      }
-      .v-btn:last-child{border-right:0px;}
     }
-    
-    .btns-2{
-      margin-left:10px;
+    .v-btn:last-child{
+      margin-right:0px;
     }
+
+  
   }
 }
 
@@ -170,6 +160,33 @@ h1,h2,h3,h4,h5,h6{
           font-size:12px;
         }
       }
+    }
+  }
+}
+
+.page_btns{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;    
+  width:100%;
+  height:60px;
+  padding:0 15px;
+  background:#E8E9EB;
+  box-shadow: none;
+  margin-bottom:20px;
+  
+  .v-btn{
+    min-height:40px;
+    padding:0 20px;
+    background:#fff;
+    color:#292929;
+    border-radius:5px;
+    border:1px solid #c2c2c2;
+
+    .v-icon{
+      font-size:18px;
+      margin-right:10px;
+      color:#de0059;
     }
   }
 }
@@ -262,5 +279,17 @@ a{
   border-radius:0;
 }
 
+// v-btn 관련
 
+.theme--light.v-btn--active:hover::before, .theme--light.v-btn--active::before{
+  opacity:0;
+}
+.theme--light.v-btn:hover::before{
+  opacity:0;
+}
+
+input::placeholder{
+  font-size:12px;
+  color:#999;
+}
 

@@ -6,13 +6,7 @@
           라이더등록
         </h3>
       </div>
-      <div class="sub-head-btns">
-        <div class="btns">
-          <v-btn text class="finish">
-            등록완료
-          </v-btn>
-        </div>
-      </div>
+     
     </div>
 
     <div class="contents">
@@ -87,6 +81,13 @@
           </div>
           
         </div>
+      </div>
+
+      <div class="page_btns">
+        <v-btn text>
+          <v-icon>mdi-check</v-icon>
+          <label>등록완료</label>
+        </v-btn>
       </div>
     </div> <!-- contents -->
   </div>

@@ -43,6 +43,13 @@
 
   .gnb{
     margin-right:15px;
+
+    .v-btn{
+      font-size:12px;
+      background:#f2f2f2;
+      border-radius:15px;
+      height:30px;
+    }
   }
 }
 

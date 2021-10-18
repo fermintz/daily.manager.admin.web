@@ -29,6 +29,10 @@ export default {
                 title:'주문조회',
                 routeName:'/'
               },
+              {
+                title:'결제요청관리',
+                routeName:'/requestList'
+              },
               
             ]
           },

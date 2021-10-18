@@ -8,33 +8,28 @@
     </div>
 
     <div class="sub-head-btns">
-      <div class="btns btns-1">
-        <v-btn text @click="$refs.postMessage.handle(true)">사용자알림</v-btn>
-        <v-btn text @click="messagePost(true, '수거지연알림', '수거지연알림을 발송하시겠습니까?')">수거지연알림</v-btn>
-        <v-btn text @click="$refs.addPayment.handle(true)">추가결제요청</v-btn>
-      </div>
-      <div class="btns btns-2">
-        <v-btn text>주문취소</v-btn>
-        <v-btn text>부분환불</v-btn>
-      </div>
+      
+      <v-btn text @click="$refs.orderCancle.handle(true)">주문취소</v-btn>
+      <v-btn text @click="$refs.refound.handle(true)">부분환불</v-btn>
+      
     </div>
     
-    <AddPayment ref="addPayment"/>
     <Message ref="message"/>
-    <PostMessage ref="postMessage" />
+    <Refound ref="refound" />
+    <OrderCancle ref="orderCancle" />
   </div> <!-- sub-head -->
 </template>
 
 <script>
 import Message from '@/components/modal/message.vue'
-import PostMessage from '@/components/modal/postMessage.vue'
-import AddPayment from '@/components/modal/addPayment.vue'
+import Refound from '@/components/modal/refound'
+import OrderCancle from '@/components/modal/orderCancle'
 
 export default {
   components:{
     Message,
-    PostMessage,
-    AddPayment
+    Refound,
+    OrderCancle
   },
   methods:{
     messagePost(value, title, text){

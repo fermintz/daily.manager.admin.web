@@ -20,8 +20,6 @@
         <dt>연락처</dt>
         <dd>
           <input type="text">
-          <input type="text">
-          <input type="text">
         </dd>
       </dl>
       <dl class="email">
@@ -153,7 +151,7 @@ export default {
 
       input{
         width:200px;
-        min-height:32px;
+        min-height:34px;
         border:1px solid #e2e2e2;
         padding:0 10px;
       }
@@ -165,12 +163,7 @@ export default {
   }
 
     dl.phone{
-      dd{
-        input{
-          width:100px;
-          margin-right:10px;
-        }
-      }
+      
     }
 
     dl.address{
@@ -210,32 +203,23 @@ export default {
 
     dl.closeDay{
       dd{
-        border:1px solid #e2e2e2;
+        display:flex;
+        align-items: center;
         
         .v-btn{
           position:relative;
-          flex:1;
+          width:100px;
           font-size:12px;
-          border-right:1px solid #e2e2e2;
+          border:1px solid #c2c2c2;
           z-index:1;
+          margin-right:10px;
+          border-radius:5px;
         }
         .v-btn.active{
-          color:#2C9CD4;
+          color:#d22828;
           position: relative;
+          border-color:#d22828;
           z-index:1;
-        }
-        .v-btn.active:after{
-          content:'';
-          position:absolute;
-          left:0;
-          top:0;
-          width:100%;
-          height:100%;
-          border:1px solid #2C9CD4;
-          z-index:3;
-        }
-        .v-btn:last-child{
-          border-right:0px;
         }
       }
     }

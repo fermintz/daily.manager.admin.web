@@ -24,12 +24,10 @@
 <script>
 
 export default {
-
+  props:['title','text'],
   data(){
     return{
       visible:false,
-      title:'',
-      text:'',
     }
   },
   methods:{

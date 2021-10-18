@@ -1,7 +1,7 @@
 <template>
   <div class="box user-info">
     <div class="box-head">
-      <h4>고객주문정보</h4>
+      <h4>고객 주문정보</h4>
     </div>
     <div class="box-content">
       <div class="top">
@@ -15,16 +15,7 @@
           </dd>
         </dl>
         <div class="divider-v" />
-        <dl class="pickupTime link">
-          <dt>수거시간</dt>
-          <dd>
-            <span>오전(08:00~12:00)</span>
-            <v-btn text @click="$refs.pickupTimeChange.handle(true)">
-              변경
-            </v-btn>
-          </dd>
-        </dl>
-        <div class="divider-v" />
+
         <dl class="userName link">
           <dt>주문자</dt>
           <dd>

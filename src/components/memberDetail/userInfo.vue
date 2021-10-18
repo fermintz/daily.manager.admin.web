@@ -5,11 +5,9 @@
       <dd>
         <div class="selectBox">
           <select>
-            <option>극소노</option>
-            <option>소노</option>
-            <option>증노</option>
-            <option>대노</option>
-            <option>극대노</option>
+            <option>Silver</option>
+            <option>Gold</option>
+            <option>Vip</option>
           </select>
           <span>
             ▼
@@ -50,7 +48,7 @@
     </dl>
     <div class="divider" />
     <dl class="addressList">
-      <dt>주소지관리</dt>
+      <dt>주소지목록</dt>
       <dd>
         <div class="table">
           <v-data-table
@@ -64,11 +62,6 @@
               <v-btn text class="table_in_btn">삭제</v-btn>
             </template>
           </v-data-table>
-        </div>
-        <div class="btns">
-          <v-btn text>
-            주소등록
-          </v-btn>
         </div>
       </dd>
     </dl>
@@ -90,28 +83,17 @@ export default {
   data(){
     return{
       headers: [
-        {
-          text: '주소지이름',
-          align: 'start',
-          sortable: false,
-          value: 'name',
-        },
         { text: '주소',sortable: false, value: 'address' },
         { text: '출입문정보',sortable: false, value: 'gate' },
-        { text: '삭제',align:'center', sortable: false, value: 'btn' },
       ],
       addressData: [
         {
-          name: '우리집',
           address: '부산시 북구 구남언덕로 15 3층',
           gate:'#1234 누룰고 종 누르시면 됩니다.',
-          btn:'삭제'
         },
         {
-          name: '타지마하라라라',
           address: '부산광역시 금정구 부산대학로 63번길 2 과학기술연구동 201호',
           gate:'#1234 누룰고 종 누르시면 됩니다.',
-          btn:'삭제'
         },
       ],
     }
