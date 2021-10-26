@@ -77,7 +77,18 @@
             <textarea
               placeholder="세탁소에게 전달할 내용을 입력해주세요"
             >
+            </textarea>
+          </div>
+        </div>
 
+        <div class="box shop_post">
+          <div class="box-head">
+            <h4>유저 안내사항</h4>
+          </div>
+          <div class="box-content">
+            <textarea
+              placeholder="사용자에게 전달할 내용을 입력해주세요"
+            >
             </textarea>
           </div>
         </div>
@@ -138,9 +149,19 @@
             <dt>합계</dt>
             <dd>7,500</dd>
           </dl>
-          <v-btn text>
-            검토완료
-          </v-btn>
+          <div class="input_box">
+            <label>최종확정금액</label>
+            <input type="text" placeholder="금액입력">
+            <span>원</span>
+          </div>
+          <div class="btns">
+            <v-btn text class="complete">
+              검토완료
+            </v-btn>
+            <v-btn text class="cancle">
+              작업취소
+            </v-btn>
+          </div>
         </div>
       </div>
      
@@ -343,15 +364,58 @@ export default {
         margin-left:5px;
       }
     }
-    
 
-    .v-btn{
-      width:100%;
-      height:45px;
-      background:#292929;
-      color:#fff;
-      margin-top:20px;
+    .input_box{
+      position: relative;
+      display:flex;
+      align-items: center;
+      margin-top:15px;
+
+      label{
+        margin-right:30px;
+      }
+      
+      input{
+        flex:1;
+        width:100%;
+        padding-right:20px;
+        height:45px;
+        border-bottom:1px solid #c2c2c2;
+        border-radius:0px;
+        font-size:24px;
+        font-family:'Roboto';
+        font-weight:500;
+        outline: none;
+        text-align:right;
+      }
+      input:focus{
+        border-bottom:1px solid #292929;
+      }
+      span{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right:0px;
+      }
+      
     }
+
+    .btns{
+      margin-top:15px;
+      .v-btn{
+        width:100%;
+        height:45px;
+        background:#292929;
+        color:#fff;
+        margin-top:10px;
+      }
+      .v-btn.cancle{
+        border:1px solid #d2d2d2;
+        color:#292929;
+        background:#fff;
+      }
+    }    
   }
   
 }
