@@ -130,7 +130,6 @@ export default {
     MemoBox,
     ProductItem,
     ProductCheckItem
-
   },
 
   data(){

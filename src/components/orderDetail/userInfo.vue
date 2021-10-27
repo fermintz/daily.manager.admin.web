@@ -44,16 +44,16 @@
     </div>
 
     <PickupDateChange ref="pickupDateChange"/>
-    <PickupTimeChange ref="pickupTimeChange"/>
+
   </div>
 </template>
 
 <script>
 import PickupDateChange from '@/components/modal/pickupDateChange.vue';
-import PickupTimeChange from '@/components/modal/pickupTimeChange.vue';
+
 
 export default {
-  components:{PickupDateChange,PickupTimeChange},
+  components:{PickupDateChange},
 }
 </script>
 

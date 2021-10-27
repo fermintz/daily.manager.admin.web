@@ -9,6 +9,14 @@
         </v-btn>
         <h3>추가결제요청 검토</h3>
       </div>
+      <div class="sub-head-btns">
+        <v-btn text @click="$refs.postMessage.handle(true)">
+          세탁소 지시사항 보내기
+        </v-btn>
+        <v-btn text @click="$refs.postMessage.handle(true)">
+          사용자 안내사항 보내기
+        </v-btn>
+      </div>
     </div> <!-- sub-head -->
 
     <div class="contents">
@@ -69,29 +77,7 @@
           </div>
         </div>
 
-        <div class="box shop_post">
-          <div class="box-head">
-            <h4>세탁소 지시사항</h4>
-          </div>
-          <div class="box-content">
-            <textarea
-              placeholder="세탁소에게 전달할 내용을 입력해주세요"
-            >
-            </textarea>
-          </div>
-        </div>
-
-        <div class="box shop_post">
-          <div class="box-head">
-            <h4>유저 안내사항</h4>
-          </div>
-          <div class="box-content">
-            <textarea
-              placeholder="사용자에게 전달할 내용을 입력해주세요"
-            >
-            </textarea>
-          </div>
-        </div>
+        
       </div>
       <div class="right">
         <div class="box order_info">
@@ -127,7 +113,7 @@
             <div class="photos">
               <v-row>
                 <v-col v-for="item in 3" :key="item" cols="3">
-                  <div class="photo">
+                  <div class="photo" @click="$refs.photoViewer.handle(true)">
                     <img src="https://source.unsplash.com/random" />
                   </div>
                 </v-col>
@@ -167,7 +153,8 @@
      
     </div> <!-- content -->
 
-     
+    <PhotoViewer ref="photoViewer" />
+    <PostMessage ref="postMessage" />
     
   </div>
 </template>
@@ -176,6 +163,8 @@
 import ProductItem from '@/components/product_item'
 import ProductCheckItem from '@/components/product_check_item'
 import AddProduct from '@/components/modal/addProduct'
+import PhotoViewer from '@/components/modal/photoViewer'
+import PostMessage from '@/components/modal/postMessage'
 
 export default {
   data(){
@@ -184,7 +173,7 @@ export default {
     }
   },
   components:{
-    ProductItem, ProductCheckItem, AddProduct
+    ProductItem, ProductCheckItem, AddProduct, PhotoViewer, PostMessage
   },
 
 }
@@ -320,6 +309,7 @@ export default {
           justify-content: center;
           align-items: center;
           overflow:hidden;
+          
 
           img{
             position:absolute;
@@ -330,6 +320,9 @@ export default {
           content:'';
           display:block;
           padding-bottom:100%;
+        }
+        .photo:hover{
+          cursor: pointer;
         }
       }
     }

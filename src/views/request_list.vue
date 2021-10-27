@@ -54,7 +54,12 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores expedita quibusdam quo rem odio consectetur blanditiis, possimus quam doloremque, saepe temporibus, tenetur facilis mollitia rerum nobis necessitatibus! Deserunt, labore!
                   </div>
                   <div class="photos">
-                    <div class="photo" v-for="item in 3" :key="item">
+                    <div 
+                      class="photo"
+                      v-for="item in 3"
+                      :key="item"
+                      @click="$refs.photoViewer.handle(true)"
+                    >
                       <img src="https://source.unsplash.com/random" />
                     </div>
                   </div>
@@ -115,8 +120,25 @@
         </div> <!-- request_item -->
       </div>
     </div>
+
+    <PhotoViewer ref="photoViewer" />
   </div>
 </template>
+
+<script>
+import PhotoViewer from '@/components/modal/photoViewer'
+
+export default {
+  components:{
+    PhotoViewer,
+  },
+  data(){
+    return{
+      
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .request{

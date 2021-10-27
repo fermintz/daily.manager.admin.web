@@ -47,7 +47,7 @@
             <dt>사진등록</dt>
             <dd>
             <v-row>
-              <v-col cols="3">
+              <v-col cols="2">
                 <div class="img-box">
                   <v-btn icon>
                     <v-icon>mdi-close</v-icon>
@@ -55,7 +55,7 @@
                   <img src="https://source.unsplash.com/random" />
                 </div>
               </v-col>
-              <v-col cols="3">
+              <v-col cols="2">
                 <div class="img-box">
                   <v-btn icon>
                     <v-icon>mdi-close</v-icon>
@@ -63,7 +63,7 @@
                   <img src="https://source.unsplash.com/random" />
                 </div>
               </v-col>
-              <v-col cols="3">
+              <v-col cols="2">
                 <div class="img-box">
                   <v-btn icon>
                     <v-icon>mdi-close</v-icon>
@@ -72,7 +72,7 @@
                 </div>
               </v-col>
               
-              <v-col cols="3">
+              <v-col cols="2">
                 <div class="img-btn" v-ripple>
                   <v-icon>mdi-plus</v-icon>
                 </div>
