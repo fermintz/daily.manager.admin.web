@@ -13,9 +13,6 @@
         <v-btn text @click="$refs.postMessage.handle(true)">
           세탁소 지시사항 보내기
         </v-btn>
-        <v-btn text @click="$refs.postMessage.handle(true)">
-          사용자 안내사항 보내기
-        </v-btn>
       </div>
     </div> <!-- sub-head -->
 
