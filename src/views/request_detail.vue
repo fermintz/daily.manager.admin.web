@@ -17,6 +17,11 @@
     </div> <!-- sub-head -->
 
     <div class="contents">
+      <div class="state_message">
+        <v-icon>mdi-alert-circle-outline</v-icon>
+        <span>추가결제요청중</span>
+      </div>
+      <div class="row_inner">
       <div class="left">
         <div class="box user_product">
           <div class="box-head">
@@ -147,7 +152,7 @@
           </div>
         </div>
       </div>
-     
+     </div>
     </div> <!-- content -->
 
     <PhotoViewer ref="photoViewer" />
@@ -179,7 +184,28 @@ export default {
 <style lang="scss" scoped>
 .request_detail{
   .contents{
-    display:flex;
+    .state_message{
+      display:flex;
+      align-items: center;
+      padding:0 15px;
+      border-radius:5px;
+      height:50px;
+      background:#F8E1E1;
+      margin-bottom:20px;
+
+      .v-icon{
+        margin-right:10px;
+        color:#d22828;
+      }
+      span{
+        flex:1;
+        font-size:16px;
+        font-family:'SCDream';
+      }
+    }
+    .row_inner{
+      display:flex;
+    }
     .left{
       flex:1;
     }

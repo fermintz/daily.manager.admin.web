@@ -150,6 +150,7 @@ export default {
         span{
           display:block;
           font-size:14px;
+          font-family:'SCDream';
           margin-bottom:6px;
           color:#292929;
         }
