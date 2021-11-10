@@ -162,6 +162,7 @@ export default {
 
         .shop{
           font-size:16px;
+          line-height:1.2;
           font-weight:500;
           font-family:'SCDream';
           width:100%;
@@ -281,17 +282,17 @@ export default {
     .request_item2{
       border:1px solid #e2e2e2;
       background:#fff;
+      padding:20px;
 
       .top{
         display:flex;
-        padding:20px;
-
+ 
         .left{
           flex:1;
-
-
           .shop{
-            font-size:24px;
+            font-family:'SCDream';
+            font-size:20px;
+            line-height:1.2;
           }
           .detail{
             display:flex;
@@ -345,9 +346,10 @@ export default {
       }
 
       .message{
-        border-top:1px solid #e2e2e2;
+        background:#f8f8f8;
         padding:20px;
-        background:#fff;
+        border-radius:10px;
+        margin-top:20px;
 
         .text{
           span{
