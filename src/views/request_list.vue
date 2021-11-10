@@ -79,11 +79,11 @@
                   <dt>요청일시</dt>
                   <dd>2021.11.11 08:13</dd>
                 </dl>
-                <dl>
+                <dl class="orderNum">
                   <dt>주문번호</dt>
                   <dd>65184</dd>
                 </dl>
-                <dl>
+                <dl class="user">
                   <dt>주문자</dt>
                   <dd>박수민</dd>
                 </dl>
@@ -312,6 +312,22 @@ export default {
             }
             dl:last-child{
               border-right:0px;
+            }
+
+            dl.orderNum{
+              dd{
+                text-decoration: underline;
+              }
+            }
+
+            dl.user{
+              dd{
+                text-decoration: underLine;
+              }
+            }
+            dl.user dd:hover, dl.orderNum dd:hover{
+              cursor: pointer;
+              color:blue
             }
           }
         }
