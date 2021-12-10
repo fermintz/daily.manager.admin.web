@@ -55,6 +55,11 @@
               >
                 상품추가
               </v-btn>
+              <v-btn 
+                text
+              >
+                기타 상품추가
+              </v-btn>
             </div>
           </div>
           <div class="box-content">
@@ -157,11 +162,13 @@
 
     <PhotoViewer ref="photoViewer" />
     <PostMessage ref="postMessage" />
+    <EtcProduct />
     
   </div>
 </template>
 
 <script>
+import EtcProduct from '@/components/modal/etcProduct'
 import ProductItem from '@/components/product_item'
 import ProductCheckItem from '@/components/product_check_item'
 import AddProduct from '@/components/modal/addProduct'
@@ -175,7 +182,7 @@ export default {
     }
   },
   components:{
-    ProductItem, ProductCheckItem, AddProduct, PhotoViewer, PostMessage
+    ProductItem, ProductCheckItem, AddProduct, PhotoViewer, PostMessage, EtcProduct
   },
 
 }

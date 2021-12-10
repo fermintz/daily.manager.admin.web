@@ -40,7 +40,7 @@
             </div>
             
             <div class="btns">
-              <div class="btn" v-ripple>
+              <div class="btn" v-ripple @click="$router.push('requestDetail')">
                 <label>요청검토</label>
                 <v-icon>mdi-arrow-right-circle-outline</v-icon>
               </div>
@@ -80,16 +80,7 @@ export default {
   },
   data(){
     return{
-      state:[
-        {
-          stateText:'검토대기중',
-          stateColor:'#2C9CD4',
-        },
-        {
-          stateText:'결제대기중',
-          stateColor:'',
-        },
-      ]
+      
     }
   }
 }
@@ -102,6 +93,9 @@ export default {
       background:#e2e2e2;
       padding:15px 20px;
       margin-bottom:20px;
+      border-radius:5px;
+      font-size:16px;
+      font-family:'SCDream'
     }
 
     .request_item2{
@@ -241,7 +235,6 @@ export default {
           }
         }
       }
-      
     }
   }
 }
