@@ -9,6 +9,7 @@
 
     <div class="sub-head-btns">
       <div class="btns">
+        <v-btn text>재세탁등록</v-btn>
         <v-btn text>쿠폰지급</v-btn>
         <v-btn text>회원탈퇴</v-btn>
       </div>
@@ -51,15 +52,11 @@ export default {
   margin-right:15px;
 
   .btns{
-    border:1px solid #c2c2c2;
-    border-radius:5px;
-    overflow:hidden;
-
     .v-btn{
       border-right:1px solid #c2c2c2;
       font-size:12px;
     }
-    .v-btn:last-child{border-right:0px;}
+
   }
 
 

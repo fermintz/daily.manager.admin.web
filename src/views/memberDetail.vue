@@ -35,6 +35,8 @@
         <UserCouponList />
       </div>
     </div>
+
+    <ReOrder ref="reOrder"/>
   </div>
 </template>
 
@@ -46,10 +48,11 @@ import UserOrderList from '@/components/memberDetail/userOrderList'
 import SearchOpt from '@/components/searchOpt/searchOpt.vue'
 import DateSelect from '@/components/searchOpt/dateSelect.vue'
 import UserCouponList from '@/components/memberDetail/userCouponList'
+import ReOrder from '@/components/memberDetail/reOrder'
 
 export default {
   components:{
-    MemberHead, UserInfo, UserSummary, UserOrderList, SearchOpt, DateSelect, UserCouponList
+    MemberHead, UserInfo, UserSummary, UserOrderList, SearchOpt, DateSelect, UserCouponList, ReOrder
   },
 
   data(){
