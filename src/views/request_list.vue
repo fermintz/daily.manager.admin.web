@@ -7,8 +7,52 @@
     </div> <!-- sub-head -->
 
     <div class="contents">
+
+      <SearchOpt>
+        <Keyword />
+      </SearchOpt>
+
+      <div class="box dataTable">
+
+        <div class="box-content">
+          <div class="tableArea">
+            <v-data-table
+              :headers="headers"
+              :items="memberData"
+              item-key="name"
+              hide-default-footer
+            >
+              <template v-slot:item.state="{item}">
+                <div class="state">
+                  <span>{{item.state}}</span>
+                </div>
+              </template>
+              <template v-slot:item.orderNumber="{item}">
+                <div class="order-number" @click="$router.push('requestDetail')">
+                  {{item.orderNumber}}
+                </div>
+              </template>
+              <template v-slot:item.images="{item}">
+                
+                <div class="images">
+                  {{item.images}}
+                  <div 
+                    class="image-item" 
+                    @click="$refs.photoViewer.handle(true)"
+                    v-for="item in 6" :key="item"
+                  >
+                    <img src="https://picsum.photos/200/300">
+                  </div>
+                </div>
+              </template>
+            </v-data-table>
+            <Pager />
+          </div>
+        </div>
+      </div>
+
       <div class="request_list">
-        <div class="no_data">
+        <!-- <div class="no_data">
           요청된 추가결제가 없습니다
         </div>
  
@@ -63,24 +107,61 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
     <PhotoViewer ref="photoViewer" />
   </div>
+
 </template>
 
 <script>
-import PhotoViewer from '@/components/modal/photoViewer'
+import PhotoViewer from '@/components/modal/photoViewer';
+import SearchOpt from '@/components/searchOpt/searchOpt.vue'
+import Keyword from '@/components/searchOpt/keyword.vue'
+import Pager from '@/components/pager.vue';
 
 export default {
   components:{
-    PhotoViewer,
+     SearchOpt, Pager, Keyword, PhotoViewer
   },
   data(){
     return{
-      
+       headers: [
+        { text: '요청상태',sortable: false, value: 'state', },
+        { text: '주문번호',sortable: false, value: 'orderNumber' },
+        { text: '요청일시',sortable: false, value: 'date' },
+        { text: '요청파트너',sortable: false, value: 'partner' },
+        { text: '주문자',sortable: false, value: 'user' },
+        { text: '주문자_전화번호',sortable: false, value: 'userPhone' },
+        { text: '요청내용',sortable: false, value: 'text', width:360},
+        { text: '이미지',sortable: false, value: 'images', width:360},
+
+      ],
+      memberData: [
+        {
+          state:'결제완료',
+          orderNumber:'38221G-DDGC',
+          date:'2022.01.05 13:36',
+          partner:'월드크리닝 덕포지사',
+          user:'박수민',
+          userPhone:'부산시 북구 구남언덕로 15 3층',
+          text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum atque esse dolor accusantium necessitatibus adipisci vel nobis, in, dolorem rem sequi assumenda, omnis explicabo nihil numquam aut aspernatur odit corporis.',
+          images:null,
+        },
+         {
+          state:'대기중',
+          orderNumber:'38221G-DDGC',
+          date:'2022.01.05 13:36',
+          partner:'월드크리닝 덕포지사',
+          user:'박수민',
+          userPhone:'부산시 북구 구남언덕로 15 3층',
+          text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum atque esse dolor accusantium necessitatibus adipisci vel nobis, in, dolorem rem sequi assumenda, omnis explicabo nihil numquam aut aspernatur odit corporis.',
+          images:null,
+        },
+
+      ],
     }
   }
 }
@@ -88,151 +169,40 @@ export default {
 
 <style lang="scss" scoped>
 .request{
-  .request_list{
-    .no_data{
-      background:#e2e2e2;
-      padding:15px 20px;
-      margin-bottom:20px;
-      border-radius:5px;
-      font-size:16px;
-      font-family:'SCDream'
+  .tableArea{
+
+    .state{
+      span{
+        display:inline-block;
+        padding:5px;
+        border:1px solid #c2c2c2;
+        border-radius:5px;
+      }
     }
 
-    .request_item2{
-      border:1px solid #e2e2e2;
-      background:#fff;
-      padding:20px;
+    .order-number{
+      font-weight:bold;
+      text-decoration: underline;
+      cursor: pointer;
+    }
 
-      .top{
+    .images{
+      display:flex;
+      flex-wrap: wrap;
+      
+      .image-item{
         display:flex;
-        .left{
-          flex:1;
-          .row_line{
-            display:flex;
-            align-items: center;
-            .state{
-              border:1px solid #2C9CD4; /* 결제대기 일시 #de0059 */
-              font-size:12px;
-              height:30px;
-              display:flex;
-              align-items: center;
-              padding:0 10px;
-              border-radius:5px;
-              margin-right:10px;
-              color:#2C9CD4; /* 결제대기 일시 #de0059 */
-            }
-            .shop{
-              font-family:'SCDream';
-              font-size:20px;
-              line-height:1.2;
-            }
-          }
-          .detail{
-            display:flex;
-            margin-top:20px;
-            dl{
-              margin-right:20px;
-              width:200px;
-              border-right:1px solid #e2e2e2;
-              dt{
-                font-size:12px;
-                color:#898989;
-              }
-              dd{
-                font-size:16px;
-                margin-top:3px;
-              }
-            }
-            dl:last-child{
-              border-right:0px;
-            }
-
-            dl.orderNum{
-              dd{
-                text-decoration: underline;
-              }
-            }
-
-            dl.user{
-              dd{
-                text-decoration: underLine;
-              }
-            }
-            dl.user dd:hover, dl.orderNum dd:hover{
-              cursor: pointer;
-              color:blue
-            }
-          }
-        }
-
-        
-        .btns{
-          width:150px;
-          
-          .btn{
-            display:flex;
-            padding:10px;
-            justify-content: space-between;
-            height:100%;
-            background:#292929;
-            padding:10px;
-            border-radius:5px;
-
-            label{
-              color:#fff;
-              align-self: flex-start;
-            }
-            .v-icon{
-              color:#aaa;
-              align-self: flex-end;
-            }
-          }
-          .btn:hover{
-            cursor: pointer;
-          }
-          
-        }
-      }
-
-      .message{
-        background:#f8f8f8;
-        padding:20px;
+        align-items: center;
+        justify-content: center;
+        overflow:hidden;
         border-radius:10px;
-        margin-top:20px;
+        width:70px;
+        height:70px;
+        margin:5px;
+        cursor: pointer;
 
-        .text{
-          span{
-            display:block;
-            color:#898989;
-          }
-          p{
-            margin:0px;
-            padding:0px;
-            margin-top:10px;
-          }
-        }
-        .photos{
-          display:flex;
-          align-items: center;
-          margin-top:20px;
-
-          .photo{
-            display:flex;
-            align-items: center;
-            justify-content: center;
-            width:80px;
-            height:80px;
-            border-radius:5px;
-            overflow:hidden;
-            border:1px solid #e2e2e2;
-            margin-right:15px;
-            img{
-              width:150%;
-            }
-          }
-          .photo:hover{
-            cursor: pointer;
-          }
+        img{
+          width:100%;
         }
       }
     }

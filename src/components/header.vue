@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="logo">
+    <div class="logo" @click="$router.push('/')">
       <img src="@/assets/img/logo.png">
       <span>데일리세탁</span>
     </div>
@@ -39,6 +39,10 @@
       display:block;
       height:26px;
     }
+  }
+
+  .logo:hover{
+    cursor: pointer;
   }
 
   .gnb{

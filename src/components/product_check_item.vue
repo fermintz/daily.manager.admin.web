@@ -1,7 +1,9 @@
 <template>
-  <div class="product_item">
-    <div class="state_box">
-      <span class="add">추가됨</span>
+  <div :class="{product_item:true, add:state == 'add', del:state == 'del', cha:state == 'cha'}">
+    <div class="state_box" v-if="state">
+      <span v-if="state == 'add'">추가됨</span>
+      <span v-if="state == 'del'">삭제됨</span>
+      <span v-if="state == 'cha'">변경됨</span>
     </div>
     <div class="goods_info">
       <div class="name">운동화(세무부분포함)</div>
@@ -21,7 +23,7 @@
       <v-btn text>
         <v-icon>mdi-minus</v-icon>
       </v-btn>
-      <span>1</span>
+      <span>1</span> 
       <v-btn text>
         <v-icon>mdi-plus</v-icon>
       </v-btn>
@@ -29,13 +31,19 @@
     <div class="end_price">
       2,500 원
     </div>
-    <div class="del">
+    <div class="del_btn">
       <v-btn icon>
         <v-icon>mdi-close</v-icon>
       </v-btn>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props:['state'],
+}
+</script>
 
 <style lang="scss" scoped>
 .product_item{
@@ -155,7 +163,7 @@
     font-size:12px;
   }
 
-  .del{
+  .del_btn{
     margin-left:20px;
     .v-btn{
       width:30px;
@@ -167,6 +175,36 @@
       }
     }
   }
+
+
+  &.add{
+    .state_box{
+      span{
+        color:#FF0158;
+        border:1px solid #FF0158;
+      }
+    }
+  }
+
+  &.del{
+    border:0px;
+    background:#f2f2f2;
+
+    .del_btn{
+      display:none;
+    }
+  }
+
+  &.cha{
+    .state_box{
+      span{
+        color:#2C8EF1;
+        border:1px solid #2C8EF1;
+      }
+    }
+  }
+
+
 
 }
 </style>

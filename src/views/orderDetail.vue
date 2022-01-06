@@ -10,7 +10,7 @@
             <div class="tab_head">
               <v-btn 
                 text 
-                v-for="(item, index) in ['주문정보','상품정보']" 
+                v-for="(item, index) in ['주문정보','상품정보','주문히스토리']" 
                 :key="index"
                 @click="detailTab = index"
                 :class="{active:detailTab === index}"
@@ -57,7 +57,11 @@
                 </div>
                 <div class="box-content">
                   <div class="list">
-                    <ProductCheckItem v-for="item in 5" :key="item"/>
+                    <ProductCheckItem state="add"/>
+                    <ProductCheckItem state="cha"/>
+
+                    <h5>삭제된 목록</h5>
+                    <ProductCheckItem state="del"/>
                   </div>
                   <div class="divider-v"/>
                   <div class="total">
@@ -74,6 +78,14 @@
                       <dd>9,000원</dd>
                     </dl>
                   </div>
+                </div>
+              </div>
+            </div> <!-- tab-1 -->
+
+            <div class="tab_contents" v-show="detailTab === 2">
+              <div class="box">
+                <div class="box-content">
+                  <OrderHistory />
                 </div>
               </div>
             </div>
@@ -117,6 +129,7 @@ import MemoBox from '@/components/orderDetail/memoBox.vue'
 import DetailHead from '@/components/orderDetail/detailHead.vue'
 import ProductItem from '@/components/product_item'
 import ProductCheckItem from '@/components/product_check_item'
+import OrderHistory from '@/components/orderDetail/orderHistory'
 
 export default {
   components:{
@@ -129,7 +142,8 @@ export default {
     WorkHistory,
     MemoBox,
     ProductItem,
-    ProductCheckItem
+    ProductCheckItem,
+    OrderHistory,
   },
 
   data(){
@@ -214,6 +228,13 @@ export default {
       
       .list{
         flex:1;
+
+        h5{
+          font-size:14px;
+          font-weight:400;
+          margin-bottom:10px;
+          margin-top:20px;
+        }
       }
 
       .divider-v{
