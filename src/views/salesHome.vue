@@ -17,7 +17,6 @@
                 :items="area"
                 dense
                 hide-details
-
                 class="selectBox"
               />
             </div>
@@ -84,7 +83,7 @@
             <dl>
               <dt>
                 <strong>총 매출금액</strong>
-                <span>2021-07-01 ~ 07-21</span>
+                <span>2021-07-01 ~ 07-10</span>
               </dt>
               <dd>
                 <span>321건</span>
@@ -94,19 +93,19 @@
             <dl>
               <dt>
                 <strong>최대 매출금액</strong>
-                <span>2021-07-14</span>
+                <span>2021-07-01</span>
               </dt>
               <dd>
-                <strong>3,489,000</strong>
+                <strong>561,500</strong>
               </dd>
             </dl>
             <dl>
               <dt>
                 <strong>최소 매출금액</strong>
-                <span>2021-07-11</span>
+                <span>2021-07-09</span>
               </dt>
               <dd>
-                <strong>1,768,000</strong>
+                <strong>268,000</strong>
               </dd>
             </dl>
           </div>
@@ -150,39 +149,65 @@ export default {
       area:['전체','서울','부산'],
       areaSelect:'전체',
       date_menu:false,
-      dates: ['2021-07-01', '2021-07-02'],
+      dates: ['2021-07-01', '2021-07-10'],
 
       headers: [
-        { text: '회원번호',sortable: false, value: 'memberNum' },
-        { text: '회원명',sortable: false, value: 'userName' },
-        { text: '카카오아이디',sortable: false, value: 'kakaoID' },
-        { text: '전화번호',sortable: false, value: 'phone' },
-        { text: '대표주소',sortable: false, value: 'address' },
-        { text: '총주문수',sortable: false, value: 'totalNum' },
+        { text: '일자',sortable: false, value: 'date' },
+        { text: '주문금액',sortable: false, value: 'orderPrice' },
+        { text: '추가금액',sortable: false, value: 'addPrice' },
+        { text: '할인금액',sortable: false, value: 'salePrice' },
+        { text: '배송비',sortable: false, value: 'delivery' },
+        { text: '총주문수',sortable: false, value: 'totalNumber' },
         { text: '총주문금액',sortable: false, value: 'totalPrice' },
-        { text: '쿠폰',sortable: false, value: 'coupon' },
+        
       ],
       memberData: [
         {
-          memberNum:102830,
-          userName:'박수민',
-          kakaoID:'fermintz@gmail.com',
-          phone:'010-8525-4561',
-          address:'부산시 북구 구남언덕로 15 3층',
-          totalNum:'3 건',
-          totalPrice:'98,500 원',
-          coupon:'3'
+          date:'2021-07-01',
+          orderPrice:'435,000 원',
+          addPrice:'85,000 원',
+          salePrice:'24,000 원',
+          delivery:'65,000 원',
+          totalNumber:'51 건',
+          totalPrice:'561,500 원',
         },
         {
-          memberNum:123310,
-          userName:'김민선',
-          kakaoID:'fermintz@gmail.com',
-          phone:'010-8525-4561',
-          address:'부산시 북구 구남언덕로 15 3층',
-          totalNum:'3 건',
-          totalPrice:'98,500 원',
-          coupon:'3'
-        }
+          date:'2021-07-02',
+          orderPrice:'398,000 원',
+          addPrice:'55,000 원',
+          salePrice:'32,000 원',
+          delivery:'87,000 원',
+          totalNumber:'48 건',
+          totalPrice:'348,500 원',
+        },
+        {
+          date:'2021-07-03',
+          orderPrice:'423,000 원',
+          addPrice:'40,000 원',
+          salePrice:'15,000 원',
+          delivery:'67,000 원',
+          totalNumber:'42 건',
+          totalPrice:'482,000 원',
+        },
+        {
+          date:'2021-07-04',
+          orderPrice:'328,000 원',
+          addPrice:'49,000 원',
+          salePrice:'10,000 원',
+          delivery:'72,000 원',
+          totalNumber:'38 건',
+          totalPrice:'398,500 원',
+        },
+        {
+          date:'2021-07-05',
+          orderPrice:'385,000 원',
+          addPrice:'65,000 원',
+          salePrice:'50,000 원',
+          delivery:'68,000 원',
+          totalNumber:'56 건',
+          totalPrice:'456,500 원',
+        },
+
       ],
     }
   },
@@ -306,6 +331,8 @@ export default {
   .chart{
     margin-top:15px;
     border:1px solid #e2e2e2;
+    height:500px;
+
   }
 
   .data_table{

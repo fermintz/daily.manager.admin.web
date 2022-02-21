@@ -14,30 +14,38 @@ export default {
       chartData:{
         type: "line",
         data: {
-          labels: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"],
+          labels: ["1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일"],
           datasets: [
             {
-              label: "Number of Moons",
-              data: [0, 0, 1, 2, 79, 82, 27, 14],
-              backgroundColor: "rgba(54,73,93,.5)",
-              borderColor: "#36495d",
-              borderWidth: 3
-            },
-            {
-              label: "Planetary Mass",
-              data: [0.166, 2.081, 3.003, 0.323, 954.792, 285.886, 43.662, 51.514],
+              label: "천원단위",
+              data: [561, 348, 482, 398, 456, 241, 221, 150, 318, 298, 0 ],
               backgroundColor: "rgba(71, 183,132,.5)",
               borderColor: "#47b784",
-              borderWidth: 3
+              borderWidth: 3,
+              tension:0,
+              clip:0,
             }
           ]
         },
         options: {
-            scales: {
-                y: {
-                    stacked: true
-                }
-            }
+          layout:{
+            padding:{
+              left:20,
+              right:20,
+              top:20,
+              bottom:20,
+            },
+          },
+          responsive:true,
+          maintainAspectRatio:false,
+          scales: {
+            yAxes: [{
+                stacked: true
+            }],
+            xAxes: [{
+                stacked: true
+            }]
+          }
         }
       }
     }
