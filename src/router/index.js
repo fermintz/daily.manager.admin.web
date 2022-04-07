@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 import Base from "../components/layout/base.vue";
 import OrderList from "../views/orderList.vue";
 import OrderDetail from "../views/orderDetail.vue";
@@ -41,12 +40,7 @@ const routes = [
     component: Base,
     children:[
       {
-        path: "/home",
-        name: "home",
-        component: Home,
-      },
-      {
-        path:"/",
+        path:"/orderList",
         name:'orderList',
         component:OrderList,
       },
@@ -130,6 +124,11 @@ const routes = [
         name:"requestDetail",
         component:RequestDetail,
       },
+      {
+        path:"/",
+        name:'orderState',
+        component: ()=> import('@/views/orderState')
+      }
     ],
   },
 ];

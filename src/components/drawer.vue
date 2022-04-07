@@ -27,7 +27,7 @@ export default {
             menu2d:[
               {
                 title:'주문조회',
-                routeName:'/'
+                routeName:'/orderList'
               },
               {
                 title:'결제요청관리',

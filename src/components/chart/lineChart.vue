@@ -1,7 +1,6 @@
 <template>
-  <canvas id="lineChart" width="400" height="400">
+  <canvas id="lineChart" />
 
-  </canvas>
 </template>
 
 
@@ -17,10 +16,19 @@ export default {
           labels: ["1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일"],
           datasets: [
             {
-              label: "천원단위",
+              label: "서울",
               data: [561, 348, 482, 398, 456, 241, 221, 150, 318, 298, 0 ],
-              backgroundColor: "rgba(71, 183,132,.5)",
+              backgroundColor: "rgba(255,255,255,0)",
               borderColor: "#47b784",
+              borderWidth: 3,
+              tension:0,
+              clip:0,
+            },
+            {
+              label: "부산",
+              data: [115, 264, 415, 187, 321, 174, 421, 512, 164, 297, 0 ],
+              backgroundColor: "rgba(255,255,255,0.1)",
+              borderColor: "#de0059",
               borderWidth: 3,
               tension:0,
               clip:0,
@@ -30,10 +38,10 @@ export default {
         options: {
           layout:{
             padding:{
-              left:20,
-              right:20,
-              top:20,
-              bottom:20,
+              left:0,
+              right:0,
+              top:0,
+              bottom:0,
             },
           },
           responsive:true,

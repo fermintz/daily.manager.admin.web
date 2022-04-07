@@ -93,6 +93,7 @@ h1,h2,h3,h4,h5,h6{
 .contents{
   padding:20px;
 
+
   .box{
     border:1px solid #e2e2e2;
     background:#fff;
@@ -100,7 +101,7 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom:20px;
 
     .box-head{
-      height:46px;
+      height:56px;
       padding:15px;
       border-bottom:1px solid #e2e2e2;
       display:flex;
@@ -108,7 +109,7 @@ h1,h2,h3,h4,h5,h6{
       justify-content: space-between;
 
       h4{
-        font-size:14px;
+        font-size:16px;
       }
 
       .btns{
