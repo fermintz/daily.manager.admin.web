@@ -16,7 +16,6 @@ import EventWrite from '../views/eventWrite';
 import BoardWrite from '../views/boardWrite';
 import Calculate from '../views/calculate.vue'
 import SalesHome from '../views/salesHome.vue';
-import RequestList from '../views/request_list.vue';
 import RequestDetail from '../views/request_detail.vue';
 import Login from '../views/login.vue';
 import Error from '../views/error.vue';
@@ -117,7 +116,7 @@ const routes = [
       {
         path:"/requestList",
         name:"requestList",
-        component:RequestList,
+        component:()=> import('@/views/requestList/requestList.vue'),
       },
       {
         path:"/requestDetail",
